@@ -1,0 +1,12 @@
+# 1) copy to /etc/default/isc-dhcp-relay
+# 2) /etc/init.d/isc-dhcp-relay restart
+
+# ALTERNATIVELY) instead of steps above, simply run:
+# dhcrelay -i eth1 10.3.8.10
+# dhcrelay -i eth1 10.3.8.10"
+#
+# for IPv6: dhcrelay -6 -l eth1 -u eth1 
+# -u... server; -l....clients
+
+SERVERS="10.3.8.10"
+INTERFACES="eth1"

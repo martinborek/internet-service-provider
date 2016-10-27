@@ -1,0 +1,7 @@
+# /etc/resolv.conf
+
+domain isp3.lab # for resolving short names
+search isp3.lab
+
+nameserver 10.3.8.10
+nameserver fd00:10:3:8::10

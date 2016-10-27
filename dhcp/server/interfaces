@@ -1,0 +1,36 @@
+#/etc/network/interfaces for dhcp-server
+
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# Management interface
+# DO NOT CHANGE THIS INTERFACE CONFIGURATION!
+auto eth0
+iface eth0 inet dhcp
+# This is an autoconfigured IPv6 interface
+iface eth0 inet6 auto
+
+# Student main interface
+# Must be configuration manually
+auto eth1
+iface eth1 inet static
+address 10.3.8.10
+netmask 255.255.252.0
+network 10.3.8.0
+broadcast 10.3.11.255
+gateway 10.3.8.3
+dns-nameservers 10.3.8.10
+dns-search isp3.lab
+# This is an autoconfigured IPv6 interface
+#iface eth1 inet6 auto
+iface eth1 inet6 static
+address fd00:10:3:8::10/64
+netmask 64
+gateway fe80::1
+dns-nameservers fd00:10:3:8::10
+dns-search isp3.lab

@@ -1,0 +1,35 @@
+;
+; BIND reverse data file for fd00:10:3:
+;
+
+$ORIGIN 3.0.0.0.0.1.0.0.0.0.d.f.ip6.arpa.
+$TTL	604800
+@	IN	SOA	ns.isp3.lab. borek.kth.se. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.isp3.lab.
+0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0 IN  PTR ns.isp3.lab.
+1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0 IN  PTR voip.isp3.lab.
+0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR dhcp-relay.isp3.lab.
+1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR client-1.isp3.lab.
+2.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR client-2.isp3.lab.
+3.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR client-3.isp3.lab.
+4.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR client-4.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0 IN  PTR gi01-ra.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0 IN  PTR gi00-ra.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.0.0.0 IN  PTR fa10-ra.isp3.lab.
+1.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.0 IN  PTR loopback-ra.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.0 IN  PTR gi01-rb.isp3.lab.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0 IN  PTR gi00-rb.isp3.lab.
+2.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.0 IN  PTR loopback-rb.isp3.lab.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0 IN  PTR gi01-rc.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR gi00-rc.isp3.lab.
+3.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.0 IN  PTR loopback-rc.isp3.lab.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.0 IN  PTR gi01-rd.isp3.lab.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR gi00-rd.isp3.lab.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.0.0.0 IN  PTR fa10-rd.isp3.lab.
+4.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.0 IN  PTR loopback-rd.isp3.lab.

@@ -1,0 +1,78 @@
+# /etc/dhcp/dhcpd6.conf
+#run "/usr/sbin/dhcpd -6 -d -cf /etc/dhcp/dhcpd6.conf eth1"
+
+# IPv6 address valid lifetime
+#  (at the end the address is no longer usable by the client)
+#  (set to 30 days, the usual IPv6 default)
+default-lease-time 2592000;
+
+# IPv6 address preferred lifetime
+#  (at the end the address is deprecated, i.e., the client should use
+#   other addresses for new connections)
+#  (set to 7 days, the	usual IPv6 default)
+preferred-lifetime 604800;
+
+# T1, the delay before Renew
+#  (default is 1/2 preferred lifetime)
+#  (set to 1 hour)
+option dhcp-renewal-time 3600;
+
+# T2, the delay before Rebind (if Renews failed)
+#  (default is 3/4 preferred lifetime)
+#  (set to 2 hours)
+option dhcp-rebinding-time 7200;
+
+# Enable RFC 5007 support (same than for DHCPv4)
+allow leasequery;
+
+# The delay before information-request refresh
+#  (minimum is 10 minutes, maximum one day, default is to not refresh)
+#  (set to 6 hours)
+option dhcp6.info-refresh-time 21600;
+
+# The path of the lease file
+#dhcpv6-lease-file-name "/var/lib/dhcpd/dhcpd6.leases";
+
+##############################################3
+option dhcp6.domain-name "isp3.lab";
+option dhcp6.name-servers fd00:10:3:8::10;
+
+host VoIP {
+    hardware ethernet 08:00:27:d8:c5:2a;
+    fixed-address6 fd00:10:3:8::11;
+}
+
+host Client1 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address6 fd00:10:3:8::11;
+}
+
+host Client2 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address6 fd00:10:3:8::12;
+}
+
+host Client3 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address6 fd00:10:3:8::13;
+}
+
+host Client4 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address6 fd00:10:3:8::14;
+}
+
+#host DHCPRelay {
+#    hardware ethernet ADD_MAC;
+#    fixed-address6 fd00:10:3:0::3;
+#}
+
+# SERVERS
+subnet6 fd00:10:3:8::/64 {
+    range6 fd00:10:3:8::12 fd00:10:3:8:ffff:ffff:ffff:ffff;
+}
+
+# CLIENTS
+subnet6 fd00:10:3:0::/64 {
+    range6 fd00:10:3:0::15 fd00:10:3:0:ffff:ffff:ffff:ffff;
+}

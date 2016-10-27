@@ -1,0 +1,73 @@
+# /etc/dhcp/dhcpd.conf
+# run "sudo service isc-dhcp-server restart"
+
+option domain-name "isp3.lab";
+option domain-name-servers 10.3.8.10;
+
+default-lease-time 86400; # one day
+max-lease-time 604800; # one week
+
+host VoIP {
+    hardware ethernet 08:00:27:d8:c5:2a;
+    fixed-address 10.3.8.11;
+}
+
+host Client1 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address 10.3.0.11;
+}
+
+host Client2 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address 10.3.0.12;
+}
+
+host Client3 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address 10.3.0.13;
+}
+
+host Client4 {
+    hardware ethernet TODO_ADD_MAC;
+    fixed-address 10.3.0.14;
+}
+
+#host DHCPRelay {
+#    hardware ethernet ADD_MAC;
+#    fixed-address 10.3.0.10;
+#    ddns-hostname = pick (
+#        host-decl-name,
+#        option host-name,
+#        concat ("server_", binary-to-ascii (10, 8, "-", leased-address))
+#    );
+#}
+
+#SERVERS
+subnet 10.3.8.0 netmask 255.255.252.0 {
+    range 10.3.8.12 10.3.11.254; #10.3.8.10 fixed for DHCP server and .11 for VoIP server
+    option subnet-mask 255.255.252.0;
+    #option broadcast-address IF_NECESSARY;
+    option routers 10.3.8.3; #gateway
+    #option routers 10.3.8.1; #R_A
+    #option routers 10.3.8.2; #R_B
+#    ddns-hostname = pick (
+#        host-decl-name,
+#        option host-name,
+#        concat ("server_", binary-to-ascii (10, 8, "-", leased-address))
+#    );
+}
+
+#CLIENTS
+subnet 10.3.0.0 netmask 255.255.248.0 {
+    range 10.3.0.15 10.3.7.254; #10.3.0.3 fixed for DHCP relay
+    option subnet-mask 255.255.248.0;
+    #option broadcast-address IF_NECESSARY;
+    option routers 10.3.0.3; #gateway
+    #option routers 10.3.0.1; #R_C
+    #option routers 10.3.0.2; #R_D
+#    ddns-hostname = pick (
+#        host-decl-name,
+#        option host-name,
+#        concat ("client_", binary-to-ascii (10, 8, "-", leased-address))
+#    );
+} 

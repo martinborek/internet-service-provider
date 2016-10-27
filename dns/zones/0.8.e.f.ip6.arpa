@@ -1,0 +1,15 @@
+;
+; BIND reverse data file for fe80:
+;
+
+$ORIGIN 0.8.e.f.ip6.arpa.
+$TTL	604800
+@	IN	SOA	ns.isp3.lab. borek.kth.se. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.isp3.lab.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.0.0.0.0.0.0.0.0 IN  PTR virtual-r.isp3.lab

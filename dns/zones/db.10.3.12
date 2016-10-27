@@ -1,0 +1,23 @@
+;
+; BIND reverse data file for local 10.3.12.xxx
+;
+$TTL	604800
+@	    IN	SOA	ns.isp3.lab. borek.kth.se. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	    IN	NS	ns.isp3.lab.
+1       IN  PTR gi01-ra.isp3.lab.
+2       IN  PTR gi01-rc.isp3.lab.
+5       IN  PTR gi01-rb.isp3.lab.
+6       IN  PTR gi01-rd.isp3.lab.
+12      IN  PTR fa10-rb.isp3.lab.
+13      IN  PTR fa10-ra.isp3.lab.
+14      IN  PTR fa10-rd.isp3.lab.
+21      IN  PTR loopback-ra.isp3.lab.
+22      IN  PTR loopback-rb.isp3.lab.
+23      IN  PTR loopback-rc.isp3.lab.
+24      IN  PTR loopback-rd.isp3.lab.

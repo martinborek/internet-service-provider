@@ -1,0 +1,62 @@
+;
+; BIND data file for isp3.lab
+;
+$TTL	604800
+@	IN	SOA	ns.isp3.lab. borek.kth.se. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@			    IN	NS	    ns.isp3.lab.
+ns      		IN	A	    10.3.8.10
+ns       		IN	AAAA	fd00:10:3:8::10
+voip			IN	A	    10.3.8.11
+voip			IN	AAAA	fd00:10:3:8::11
+dhcp-relay		IN	A	    10.3.0.10
+dhcp-relay		IN	AAAA	fd00:10:3:0::10
+www.isp3.lab.  	IN	CNAME	ns.isp3.lab.
+gi01-ra         IN  A       10.3.12.1
+gi01-ra         IN  AAAA    fd00:10:3:1::1
+gi00-ra         IN  A       10.3.8.1
+gi00-ra         IN  AAAA    fd00:10:3:8::1
+fa11-ra         IN  A       10.0.16.6
+fa10-ra         IN  A       10.3.12.13
+fa10-ra         IN  AAAA    fd00:10:3:3::1
+loopback-ra     IN  A       10.3.12.21
+loopback-ra     IN  AAAA    fd00:10:3:12::21
+gi01-rb         IN  A       10.3.12.5
+gi01-rb         IN  AAAA    fd00:10:3:2::1
+gi00-rb         IN  A       10.3.8.2
+gi00-rb         IN  AAAA    fd00:10:3:8::2
+fa10-rb         IN  A       10.3.12.9
+loopback-rb     IN  A       10.3.12.22
+loopback-rb     IN  AAAA    fd00:10:3:12::22
+gi01-rc         IN  A       10.3.12.2
+gi01-rc         IN  AAAA    fd00:10:3:1::2
+gi00-rc         IN  A       10.3.0.1
+gi00-rc         IN  AAAA    fd00:10:3:0::1
+loopback-rc     IN  A       10.3.12.23
+loopback-rc     IN  AAAA    fd00:10:3:12::23
+gi01-rd         IN  A       10.3.12.6
+gi01-rd         IN  AAAA    fd00:10:3:2::2
+gi00-rd         IN  A       10.3.0.2
+gi00-rd         IN  AAAA    fd00:10:3:0::2
+fa10-rd         IN  A       10.3.12.14
+fa10-rd         IN  AAAA    fd00:10:3:3::2
+loopback-rd     IN  A       10.3.12.24
+loopback-rd     IN  AAAA    fd00:10:3:12::24
+virtual-rs      IN  A       10.3.8.3
+virtual-rc      IN  A       10.3.0.3
+virtual-r       IN  AAAA    fe80::1
+client-1        IN  A       10.3.0.11
+client-1        IN  AAAA    fd00:10:3:0::11
+client-2        IN  A       10.3.0.12
+client-2        IN  AAAA    fd00:10:3:0::12
+client-3        IN  A       10.3.0.13
+client-3        IN  AAAA    fd00:10:3:0::13
+client-4        IN  A       10.3.0.14
+client-4        IN  AAAA    fd00:10:3:0::14
+
+_sip._udp.isp3.lab. IN SRV 0 0 5060 voip.isp3.lab.
