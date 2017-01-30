@@ -1,4 +1,4 @@
-# internet-service-provider
+# Internet service provider
 
 Internet service provider as a project for the course "Advanced Internetworking", taken at KTH Royal Institute of Technology in 2015.
 
